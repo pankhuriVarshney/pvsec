@@ -14,24 +14,52 @@ export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus("sending")
+  e.preventDefault()
+  setStatus("sending")
 
-    // Simulate sending
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+  try {
+    const res = await fetch("https://formspree.io/f/mreebbwy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formState),
+    })
+
+    if (!res.ok) throw new Error("Failed")
+
     setStatus("success")
-
-    setTimeout(() => {
-      setStatus("idle")
-      setFormState({ name: "", email: "", message: "" })
-    }, 3000)
+    setFormState({ name: "", email: "", message: "" })
+  } catch (err) {
+    setStatus("error")
   }
 
+  setTimeout(() => setStatus("idle"), 3000)
+}
+
+
   const socials = [
-    { name: "GitHub", icon: Github, handle: "github.com/pankhuri", href: "#" },
-    { name: "LinkedIn", icon: Linkedin, handle: "linkedin.com/in/pankhuri-varshney", href: "#" },
-    { name: "Email", icon: Mail, handle: "contact@pankhuri.dev", href: "mailto:contact@pankhuri.dev" },
-  ]
+  {
+    name: "GitHub",
+    icon: Github,
+    handle: "github.com/pankhuriVarshney",
+    href: "https://github.com/pankhuriVarshney",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    handle: "linkedin.com/in/pankhurivarshney",
+    href: "https://www.linkedin.com/in/pankhurivarshney/",
+  },
+  {
+    name: "Email",
+    icon: Mail,
+    handle: "pankhu.var@gmail.com",
+    href: "mailto:pankhu.var@gmail.com",
+  },
+]
+
 
   return (
     <section id="contact" className="relative py-24 px-4 bg-card/20">
@@ -146,7 +174,7 @@ export function ContactSection() {
             <div className="mt-8 p-4 bg-secondary/20 border border-border rounded-xl">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span className="text-sm text-accent font-medium">Open to Opportunities</span>
+                <span className="text-sm text-primary font-medium">Open to Opportunities</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
                 Graduating May 2027. Looking for security internships and research opportunities.

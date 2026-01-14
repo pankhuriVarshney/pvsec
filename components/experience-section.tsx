@@ -13,10 +13,10 @@ const experiences = [
     description:
       "Conducting VAPT for diverse clients, simulating real-world cyberattacks to identify critical security gaps.",
     achievements: [
+      "Performed comprehensive Vulnerability Assessment and Penetration Testing Reports on client domains",
       "Collaborated on Red Team Toolkit with automated exploitation modules and reporting",
       "Built Exploits Database indexing vulnerabilities across web, mobile, IoT, enterprise stacks",
       "Developed AI-powered OSINT tool for real-time intelligence from public and darknet sources",
-      "Contributed to Supreme Court briefs and cybersecurity policy reports",
       "Gained hands-on experience in digital forensics and dark web monitoring",
     ],
     tech: ["VAPT", "Python", "OSINT", "Digital Forensics", "Threat Intelligence"],

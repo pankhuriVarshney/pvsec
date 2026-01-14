@@ -37,7 +37,7 @@ const manifestoItems = [
   {
     icon: Target,
     title: "Precision & Purpose",
-    oath: "Every action I take in security has consequences. I will be deliberate, documented, and purposeful—never reckless with the trust placed in me.",
+    oath: "Every action I take in security has consequences. I will be deliberate, documented, and purposeful, never reckless with the trust placed in me.",
     color: "text-emerald-400",
   },
 ]
@@ -84,7 +84,7 @@ export function ManifestoSection() {
             personal_statement.txt
           </div>
           <blockquote className="text-lg md:text-xl text-foreground/90 leading-relaxed italic">
-            "I believe cybersecurity is not just a profession—it's a calling. In a world where digital threats can
+            "I believe cybersecurity is not just a profession, it's a calling. In a world where digital threats can
             disrupt lives, destroy businesses, and destabilize nations, I choose to stand on the side of defense. My
             mission is simple:
             <span className="text-primary font-semibold not-italic">

@@ -5,76 +5,90 @@ import { Folder, Network, Shield, Search, Database, AlertTriangle, Sword } from 
 
 const projects = [
   {
+    id: "maya-honeynet",
+    name: "MAYA Deception Technology",
+    status: "Completed",
+    description: "Dynamic and state-synchronized honeynet system designed to deceive and map attacker behavior.",
+    longDescription:
+      "An automated deception platform that lures attackers into an isolated honeynet environment while protecting real infrastructure. The system dynamically adapts to attacker behavior and records full attack chains for threat intelligence, lateral movement analysis, and post-compromise visibility.",
+    icon: Shield,
+    tech: ["Python", "Docker", "Network Emulation", "Threat Intelligence", "SIEM"],
+    color: "text-destructive",
+    featured: true,
+  },
+  {
     id: "traceprobe",
-    name: "TraceProbe - IPDR Logs Mapper",
+    name: "TraceProbe – IPDR Logs Mapper",
     status: "Completed",
     description: "Web-based investigative tool for mapping A-Party to B-Party relationships in IPDR logs.",
     longDescription:
-      "Built a Kafka-based pipeline to ingest and normalize large-scale log files. Integrated Elasticsearch and Kibana for fast querying and intuitive dashboards with geo-mapped IPs, top services, and threat indicators.",
+      "Built a Kafka-based pipeline to ingest and normalize large-scale IPDR log files. Integrated AbuseIPDB, bogon detection, and geolocation APIs for enrichment, with Elasticsearch and Kibana providing fast querying and geo-mapped dashboards for IPs, services, domains, sessions, and threat indicators.",
     icon: Network,
-    tech: ["Python", "Kafka", "Elasticsearch", "Kibana", "AbuseIPDB"],
+    tech: ["Python", "Kafka", "Elasticsearch", "Kibana", "AbuseIPDB", "GeoIP"],
     color: "text-primary",
     featured: true,
   },
   {
     id: "red-team-toolkit",
-    name: "Red Team Toolkit",
-    status: "Completed",
+    name: "Red Team Toolkit (DeepCytes)",
+    status: "Ongoing",
     description:
-      "Modular red team operations toolkit with integrated payload generators and privilege escalation scripts.",
+      "Modular red team operations toolkit with payload generation, privilege escalation, and automated reporting.",
     longDescription:
-      "Built at DeepCytes. Includes enumeration modules, automated reporting, custom exploits, multi-platform payloads, and stealth execution modes for real-world offensive simulation.",
+      "Designed for real-world offensive simulation, this toolkit includes integrated payload generators, enumeration modules, privilege escalation scripts, custom exploit support, multi-platform payloads, and stealth execution modes with automated post-engagement reporting.",
     icon: Sword,
-    tech: ["Python", "Rust", "Metasploit", "Custom Exploits"],
+    tech: ["Python", "Rust", "Metasploit", "Custom Exploits", "C2"],
     color: "text-destructive",
     featured: true,
   },
   {
     id: "exploits-db",
-    name: "Exploits Database Platform",
-    status: "Completed",
-    description: "Structured exploits repository indexing 0-day and known CVEs across major tech stacks.",
+    name: "Exploits Database Platform (DeepCytes)",
+    status: "Ongoing",
+    description: "Centralized exploits repository indexing 0-day and known CVEs across major technology stacks.",
     longDescription:
-      "Built at DeepCytes. Implements tagging, severity scoring, PoC integration, and version-based filtering. Backend designed for rapid threat intelligence queries.",
+      "Built a structured platform to catalog vulnerabilities across web, mobile, IoT, and SCADA environments. Implements tagging, severity scoring, PoC integration, and version-based filtering, with a backend optimized for rapid threat intelligence queries and red team integration.",
     icon: Database,
-    tech: ["Python", "PostgreSQL", "FastAPI", "CVE/NVD"],
+    tech: ["Python", "PostgreSQL", "FastAPI", "CVE/NVD", "Exploit-DB"],
     color: "text-neon-amber",
   },
   {
     id: "malware-detection",
     name: "AI Malware Detection System",
     status: "Completed",
-    description: "AI-based malware scanner using static code analysis, dynamic execution, and memory forensics.",
+    description: "AI-based malware scanner using static, dynamic, and memory-level analysis.",
     longDescription:
-      "Utilizes LLaMA 3 models for analysis. Supports PE and APK formats, auto-fetches threat intel, detects obfuscation and polymorphic behavior using heuristic and AI models.",
+      "An advanced malware detection platform combining static code analysis, sandboxed dynamic execution, memory forensics, and syscall tracing powered by LLaMA 3 models. Supports PE and APK files, auto-fetches threat intelligence, and detects obfuscation, packing, and polymorphic behavior using hybrid AI and heuristic models.",
     icon: Shield,
-    tech: ["Python", "LLaMA 3", "Sandbox", "Syscall Tracing"],
+    tech: ["Python", "LLaMA 3", "Sandboxing", "Memory Forensics", "Syscall Tracing"],
     color: "text-accent",
     featured: true,
   },
   {
     id: "fraud-detection",
-    name: "Real-Time Fraud Detection System",
+    name: "AI-Powered Real-Time Fraud Detection",
     status: "Completed",
-    description: "Scalable fraud detection using distilled transformer models and Zero Trust architecture.",
+    description: "Scalable fraud detection and customer behavior analytics system built on Zero Trust principles.",
     longDescription:
-      "Supports real-time transaction monitoring, MFA, rate limiting, and least-privilege enforcement. Includes AI-driven behavior prediction to detect anomalies and prevent fraud.",
+      "Uses distilled transformer models to analyze real-time transaction streams, enforce MFA, rate limiting, and least-privilege access. Includes AI-driven customer behavior prediction to detect anomalies, prevent fraud, reduce churn, and enable adaptive security policies based on live behavioral patterns.",
     icon: AlertTriangle,
-    tech: ["Transformers", "Zero Trust", "Real-time Analytics"],
+    tech: ["Transformers", "Zero Trust", "Real-Time Analytics", "MFA", "Behavioral AI"],
     color: "text-neon-amber",
+    featured: true,
   },
   {
     id: "osint-platform",
-    name: "Automated OSINT Platform",
-    status: "Completed",
-    description: "AI-integrated OSINT automation tool for surface and dark web intelligence gathering.",
+    name: "Automated OSINT Platform (DeepCytes)",
+    status: "Ongoing",
+    description: "AI-powered OSINT automation tool for surface and dark web intelligence gathering.",
     longDescription:
-      "Built at DeepCytes. Features entity extraction, timeline mapping, geolocation, and an interactive chatbot for footprinting, target profiling, and data correlation.",
+      "An end-to-end OSINT platform that extracts actionable intelligence using entity extraction, timeline mapping, and geolocation. Includes an interactive AI chatbot to assist with footprinting, target profiling, and data correlation across surface web, breach sources, and dark web APIs.",
     icon: Search,
-    tech: ["Python", "AI/ML", "OSINT Frameworks", "Dark Web APIs"],
+    tech: ["Python", "AI/ML", "OSINT Frameworks", "Dark Web APIs", "NLP"],
     color: "text-primary",
-  },
+  }
 ]
+
 
 const statusColors: Record<string, string> = {
   Completed: "bg-neon-green/20 text-neon-green border-neon-green/30",

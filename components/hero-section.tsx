@@ -54,8 +54,8 @@ export function HeroSection() {
           </div>
 
           <p className="mt-8 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-            Security researcher with hands-on experience in penetration testing, red team operations, and AI-driven
-            threat detection. Published IEEE author with proven expertise in building production security tools.
+            Security researcher with hands-on experience in penetration testing, red team operations, AI-driven
+            threat detection and proven expertise in building production security tools.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">

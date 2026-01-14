@@ -9,13 +9,22 @@ const GraduationCap = dynamic(
 )
 const certifications = [
   {
-    name: "eLearnSecurity Junior Penetration Tester (eJPT)",
-    issuer: "INE Security",
-    year: "2025",
-    icon: Shield,
-    verified: true,
-    highlight: true,
-  },
+  name: "Certified Penetration Testing Specialist (CPTS)",
+  issuer: "HackTheBox",
+  year: "2026 (ongoing)",
+  icon: Shield,
+  highlight: true,
+  }
+,{
+  name: "eLearnSecurity Junior Penetration Tester (eJPT)",
+  issuer: "INE Security",
+  year: "Nov 2025",
+  icon: Shield,
+  verified: true,
+  highlight: true,
+  link: "https://certs.ine.com/89970be5-847a-48a1-911c-902cd00e104a#acc.IsBlHz4N",
+}
+,
   {
     name: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
@@ -34,6 +43,13 @@ const certifications = [
 
 const achievements = [
   {
+    title: "Cipher Shadows CTF 2025",
+    platform: "National Level by IIT Jammu",
+    description: "3rd Position - September 2025",
+    icon: Trophy,
+    color: "text-neon-amber",
+  },
+  {
     title: "National CyberShield Hackathon 2025",
     platform: "National Level",
     description: "Participant in national cybersecurity competition",
@@ -45,7 +61,7 @@ const achievements = [
     platform: "CyberSecured India",
     description: "2nd Position - September 2023",
     icon: Medal,
-    color: "text-accent",
+    color: "text-neon-amber",
     highlight: true,
   },
   {
@@ -53,7 +69,7 @@ const achievements = [
     platform: "India Blockchain Alliance",
     description: "2nd Position - September 2023",
     icon: Medal,
-    color: "text-accent",
+    color: "text-neon-amber",
     highlight: true,
   },
   {
@@ -66,19 +82,20 @@ const achievements = [
   {
     title: "Merit Scholarship - 1st Rank",
     platform: "SIT Pune CSE Department",
-    description: "July 2023 - April 2025",
+    description: "July 2023 - April 2024",
     icon: GraduationCap,
     color: "text-neon-amber",
     highlight: true,
   },
   {
-    title: "IEEE Publication",
-    platform: "ADICS 2024 Conference",
-    description: "Quantum Computing research paper",
-    icon: FileText,
-    color: "text-primary",
-    highlight: true,
-  },
+  title: "IEEE Publication",
+  platform: "ADICS 2024 Conference",
+  description: "Quantum Computing Odyssey: Teleporting to the Realm of Unparalleled Possibilities ",
+  icon: FileText,
+  color: "text-primary",
+  highlight: true,
+  link: "https://doi.org/10.1109/ADICS58448.2024.10533597",
+},
 ]
 
 export function CertificationsSection() {

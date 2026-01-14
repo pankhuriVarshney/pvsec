@@ -16,6 +16,8 @@ const skillCategories = [
       { name: "Web App Security (OWASP)" },
       { name: "Network Security" },
       { name: "Digital Forensics" },
+      { name: "Cryptography" },
+      { name: "Open Source Intelligence" }
     ],
   },
   {
@@ -25,7 +27,7 @@ const skillCategories = [
     color: "text-primary",
     bgColor: "bg-primary/10",
     borderColor: "border-primary/30",
-    skills: [{ name: "OSINT" }, { name: "Cryptography" }, { name: "Steganography" }, { name: "Secure SDLC" }],
+    skills: [{ name: "Network Security and Monitoring" }, { name: "Secure DevOps" }, { name: "Security Information and Event Management (SIEM)" }, { name: "Secure SDLC" }],
   },
   {
     id: "development",
@@ -34,7 +36,7 @@ const skillCategories = [
     color: "text-neon-amber",
     bgColor: "bg-neon-amber/10",
     borderColor: "border-neon-amber/30",
-    skills: [{ name: "Python" }, { name: "JavaScript/TypeScript" }, { name: "Rust" }, { name: "Java/C/C++" }],
+    skills: [{ name: "Python" }, { name: "JavaScript/TypeScript" }, { name: "Rust" }, { name: "Java/C/C++" },{ name: "Full-Stack Web Development" }, { name: "Game Development" }, { name: "Solidity" }],
   },
   {
     id: "ai-ml",
@@ -44,6 +46,8 @@ const skillCategories = [
     bgColor: "bg-accent/10",
     borderColor: "border-accent/30",
     skills: [
+      { name: "Generative AI" },
+      { name: "Machine Learning (Supervised/Unsupervised" },
       { name: "Threat Prediction Models" },
       { name: "Malware Analysis (AI)" },
       { name: "NLP & LLMs" },
@@ -53,14 +57,48 @@ const skillCategories = [
 ]
 
 const tools = [
+  // { name: "Nmap", category: "Recon", color: "text-primary" },
+  // { name: "Metasploit", category: "Exploit", color: "text-destructive" },
+  // { name: "Burp Suite", category: "Web", color: "text-neon-amber" },
+  // { name: "Wireshark", category: "Network", color: "text-primary" },
+  // { name: "Nuclei", category: "Scanner", color: "text-primary" },
+  // { name: "Ghidra", category: "Reverse", color: "text-destructive" },
+  // { name: "Splunk", category: "SIEM", color: "text-neon-amber" },
+  // { name: "Autopsy", category: "Forensics", color: "text-primary" },
   { name: "Nmap", category: "Recon", color: "text-primary" },
-  { name: "Metasploit", category: "Exploit", color: "text-destructive" },
+  { name: "theHarvester", category: "OSINT", color: "text-primary" },
+  
   { name: "Burp Suite", category: "Web", color: "text-neon-amber" },
-  { name: "Wireshark", category: "Network", color: "text-accent" },
+  { name: "OWASP ZAP", category: "Web", color: "text-neon-amber" },
+  { name: "Nikto", category: "Web", color: "text-neon-amber" },
+  { name: "SQLmap", category: "Web", color: "text-neon-amber" },
+  { name: "Gobuster", category: "Web", color: "text-neon-amber" },
+
+  { name: "Metasploit", category: "Exploit", color: "text-destructive" },
+  { name: "SearchSploit", category: "Exploit", color: "text-destructive" },
+  { name: "Hydra", category: "Exploit", color: "text-destructive" },
+  
+  { name: "Wireshark", category: "Network", color: "text-primary" },
+  
   { name: "Nuclei", category: "Scanner", color: "text-primary" },
+  { name: "OpenVAS", category: "Scanner", color: "text-primary" },
+
   { name: "Ghidra", category: "Reverse", color: "text-destructive" },
+  { name: "IDA Free", category: "Reverse", color: "text-destructive" },
+  { name: "Radare2", category: "Reverse", color: "text-destructive" },
+
+  { name: "Autopsy", category: "Forensics", color: "text-primary" },
+  { name: "FTK Imager", category: "Forensics", color: "text-primary" },
+
   { name: "Splunk", category: "SIEM", color: "text-neon-amber" },
-  { name: "Autopsy", category: "Forensics", color: "text-accent" },
+  
+  { name: "Docker", category: "DevOps", color: "text-primary" },
+  { name: "Git", category: "DevOps", color: "text-primary" },
+  { name: "GitHub Actions", category: "DevOps", color: "text-primary" },
+
+  { name: "TensorFlow", category: "AI/ML", color: "text-neon-amber" },
+  { name: "PyTorch", category: "AI/ML", color: "text-neon-amber" },
+  { name: "Scikit-learn", category: "AI/ML", color: "text-neon-amber" }
 ]
 
 export function SkillsSection() {
