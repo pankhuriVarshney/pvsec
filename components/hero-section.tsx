@@ -15,7 +15,7 @@ export function HeroSection() {
   }, [])
 
   const stats = [
-    { value: 8.97, label: "CGPA" },
+    { value: 3, suffix:"+", label: "Years of CTF Experience" },
     { value: 1, suffix: "+", label: "Years Experience" },
     { value: 6, suffix: "+", label: "Major Projects" },
     { value: 1, label: "IEEE Publication" },
