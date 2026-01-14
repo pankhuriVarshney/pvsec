@@ -7,24 +7,24 @@ const GraduationCap = dynamic(
   () => import("lucide-react").then(m => m.GraduationCap),
   { ssr: false }
 )
+
 const certifications = [
   {
-  name: "Certified Penetration Testing Specialist (CPTS)",
-  issuer: "HackTheBox",
-  year: "2026 (ongoing)",
-  icon: Shield,
-  highlight: true,
-  }
-,{
-  name: "eLearnSecurity Junior Penetration Tester (eJPT)",
-  issuer: "INE Security",
-  year: "Nov 2025",
-  icon: Shield,
-  verified: true,
-  highlight: true,
-  link: "https://certs.ine.com/89970be5-847a-48a1-911c-902cd00e104a#acc.IsBlHz4N",
-}
-,
+    name: "Certified Penetration Testing Specialist (CPTS)",
+    issuer: "HackTheBox",
+    year: "2026 (ongoing)",
+    icon: Shield,
+    highlight: true,
+  },
+  {
+    name: "eLearnSecurity Junior Penetration Tester (eJPT)",
+    issuer: "INE Security",
+    year: "Nov 2025",
+    icon: Shield,
+    verified: true,
+    highlight: true,
+    link: "https://certs.ine.com/89970be5-847a-48a1-911c-902cd00e104a#acc.IsBlHz4N",
+  },
   {
     name: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
@@ -54,7 +54,7 @@ const achievements = [
     platform: "National Level",
     description: "Participant in national cybersecurity competition",
     icon: Trophy,
-    color: "text-neon-amber",
+    color: "text-primary",
   },
   {
     title: "Digital Forensics Hackathon",
@@ -88,105 +88,120 @@ const achievements = [
     highlight: true,
   },
   {
-  title: "IEEE Publication",
-  platform: "ADICS 2024 Conference",
-  description: "Quantum Computing Odyssey: Teleporting to the Realm of Unparalleled Possibilities ",
-  icon: FileText,
-  color: "text-primary",
-  highlight: true,
-  link: "https://doi.org/10.1109/ADICS58448.2024.10533597",
-},
+    title: "IEEE Publication",
+    platform: "ADICS 2024 Conference",
+    description: "Quantum Computing Odyssey: Teleporting to the Realm of Unparalleled Possibilities",
+    icon: FileText,
+    color: "text-primary",
+    highlight: true,
+    link: "https://doi.org/10.1109/ADICS58448.2024.10533597",
+  },
 ]
 
 export function CertificationsSection() {
   return (
     <section id="certifications" className="relative py-24 px-4">
       <div className="max-w-5xl mx-auto">
-        {/* Section Header */}
+
+        {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-xs text-primary tracking-widest uppercase font-mono">Credentials</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Certifications & Achievements</h2>
+          <span className="text-xs text-primary tracking-widest uppercase font-mono">
+            Credentials
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">
+            Certifications & Achievements
+          </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          {/* Certifications */}
+
+          {/* CERTIFICATIONS */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-5 flex items-center gap-2">
-              <Shield className="w-4 h-4 text-primary" />
-              Certifications
+            <h3 className="text-lg font-semibold mb-5 flex items-center gap-2">
+              <Shield className="w-4 h-4 text-primary" /> Certifications
             </h3>
+
             <div className="space-y-3">
-              {certifications.map((cert, i) => {
+              {certifications.map(cert => {
                 const Icon = cert.icon
+                const Wrapper = cert.link ? "a" : "div"
+
                 return (
-                  <div
+                  <Wrapper
                     key={cert.name}
-                    className={`group flex items-center gap-4 p-4 backdrop-blur-sm border rounded-xl transition-colors ${
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center gap-4 p-4 backdrop-blur-sm border rounded-xl transition-all ${
                       cert.highlight
-                        ? "bg-primary/10 border-primary/30 hover:border-primary/50"
-                        : "bg-card/50 border-border hover:border-primary/30"
-                    }`}
+                        ? "bg-primary/10 border-primary/30 hover:border-primary/60 hover:shadow-primary/30 hover:shadow-lg"
+                        : "bg-card/50 border-border hover:border-primary/40"
+                    } ${cert.link && "cursor-pointer"}`}
                   >
-                    <div
-                      className={`p-2.5 rounded-lg transition-colors ${
-                        cert.highlight ? "bg-primary/20" : "bg-secondary group-hover:bg-primary/10"
-                      }`}
-                    >
+                    <div className={`p-2.5 rounded-lg ${
+                      cert.highlight ? "bg-primary/20" : "bg-secondary group-hover:bg-primary/10"
+                    }`}>
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
+
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
-                        <h4 className="font-medium text-foreground">{cert.name}</h4>
+                        <h4 className="font-medium">{cert.name}</h4>
                         {cert.verified && <CheckCircle className="w-4 h-4 text-neon-green" />}
                       </div>
                       <p className="text-sm text-muted-foreground">
                         {cert.issuer} • {cert.year}
                       </p>
                     </div>
-                  </div>
+                  </Wrapper>
                 )
               })}
             </div>
           </div>
 
-          {/* Achievements */}
+          {/* ACHIEVEMENTS */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-5 flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-neon-amber" />
-              Achievements
+            <h3 className="text-lg font-semibold mb-5 flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-neon-amber" /> Achievements
             </h3>
+
             <div className="space-y-3">
-              {achievements.map((achievement, i) => {
-                const Icon = achievement.icon
+              {achievements.map(ach => {
+                const Icon = ach.icon
+                const Wrapper = ach.link ? "a" : "div"
+
                 return (
-                  <div
-                    key={achievement.title}
-                    className={`group flex items-center gap-4 p-4 backdrop-blur-sm border rounded-xl transition-colors ${
-                      achievement.highlight
-                        ? "bg-accent/5 border-accent/20 hover:border-accent/40"
-                        : "bg-card/50 border-border hover:border-accent/30"
-                    }`}
+                  <Wrapper
+                    key={ach.title}
+                    href={ach.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center gap-4 p-4 backdrop-blur-sm border rounded-xl transition-all ${
+                      ach.highlight
+                        ? "bg-accent/5 border-accent/30 hover:border-accent/60 hover:shadow-accent/30 hover:shadow-lg"
+                        : "bg-card/50 border-border hover:border-accent/40"
+                    } ${ach.link && "cursor-pointer"}`}
                   >
-                    <div
-                      className={`p-2.5 rounded-lg transition-colors ${
-                        achievement.highlight ? "bg-accent/10" : "bg-secondary group-hover:bg-accent/10"
-                      }`}
-                    >
-                      <Icon className={`w-5 h-5 ${achievement.color}`} />
+                    <div className={`p-2.5 rounded-lg ${
+                      ach.highlight ? "bg-accent/10" : "bg-secondary group-hover:bg-accent/10"
+                    }`}>
+                      <Icon className={`w-5 h-5 ${ach.color}`} />
                     </div>
+
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
-                        <h4 className="font-medium text-foreground">{achievement.title}</h4>
-                        {achievement.highlight && <Star className="w-3 h-3 text-neon-amber fill-neon-amber" />}
+                        <h4>{ach.title}</h4>
+                        {ach.highlight && <Star className="w-3 h-3 text-neon-amber fill-neon-amber" />}
                       </div>
-                      <p className={`text-sm ${achievement.color}`}>{achievement.platform}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{achievement.description}</p>
+                      <p className={`text-sm ${ach.color}`}>{ach.platform}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{ach.description}</p>
                     </div>
-                  </div>
+                  </Wrapper>
                 )
               })}
             </div>
           </div>
+
         </div>
       </div>
     </section>

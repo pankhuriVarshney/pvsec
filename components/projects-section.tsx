@@ -7,12 +7,12 @@ const projects = [
   {
     id: "maya-honeynet",
     name: "MAYA Deception Technology",
-    status: "Completed",
+    status: "Ongoing",
     description: "Dynamic and state-synchronized honeynet system designed to deceive and map attacker behavior.",
     longDescription:
       "An automated deception platform that lures attackers into an isolated honeynet environment while protecting real infrastructure. The system dynamically adapts to attacker behavior and records full attack chains for threat intelligence, lateral movement analysis, and post-compromise visibility.",
     icon: Shield,
-    tech: ["Python", "Docker", "Network Emulation", "Threat Intelligence", "SIEM"],
+    tech: ["Rust", "Go Lang","Docker", "Network Emulation", "Threat Intelligence", "SIEM"],
     color: "text-destructive",
     featured: true,
   },
@@ -37,7 +37,7 @@ const projects = [
     longDescription:
       "Designed for real-world offensive simulation, this toolkit includes integrated payload generators, enumeration modules, privilege escalation scripts, custom exploit support, multi-platform payloads, and stealth execution modes with automated post-engagement reporting.",
     icon: Sword,
-    tech: ["Python", "Rust", "Metasploit", "Custom Exploits", "C2"],
+    tech: ["Javascript", "Python", "Metasploit", "Custom Exploits"],
     color: "text-destructive",
     featured: true,
   },
@@ -60,7 +60,7 @@ const projects = [
     longDescription:
       "An advanced malware detection platform combining static code analysis, sandboxed dynamic execution, memory forensics, and syscall tracing powered by LLaMA 3 models. Supports PE and APK files, auto-fetches threat intelligence, and detects obfuscation, packing, and polymorphic behavior using hybrid AI and heuristic models.",
     icon: Shield,
-    tech: ["Python", "LLaMA 3", "Sandboxing", "Memory Forensics", "Syscall Tracing"],
+    tech: ["Java", "LLaMA 3", "Sandboxing", "Memory Forensics", "Syscall Tracing"],
     color: "text-accent",
     featured: true,
   },

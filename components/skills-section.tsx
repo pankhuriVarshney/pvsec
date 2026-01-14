@@ -85,8 +85,7 @@ const tools = [
 
   { name: "Ghidra", category: "Reverse", color: "text-destructive" },
   { name: "IDA Free", category: "Reverse", color: "text-destructive" },
-  { name: "Radare2", category: "Reverse", color: "text-destructive" },
-
+  
   { name: "Autopsy", category: "Forensics", color: "text-primary" },
   { name: "FTK Imager", category: "Forensics", color: "text-primary" },
 
