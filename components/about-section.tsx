@@ -1,13 +1,7 @@
 "use client"
 
-import { User, MapPin, Briefcase, Award, Calendar } from "lucide-react"
-import dynamic from "next/dynamic"
+import { User, MapPin, Briefcase, Award, Calendar, GraduationCap } from "lucide-react"
 import Image from "next/image"
-
-const GraduationCap = dynamic(
-  () => import("lucide-react").then((m) => m.GraduationCap),
-  { ssr: false }
-)
 
 const timeline = [
   {
@@ -63,7 +57,8 @@ export function AboutSection() {
                   <Image
                     src="/me.png"
                     alt="Pankhuri Varshney"
-                    fill
+                    width={112}
+                    height={112}
                     className="object-cover"
                     priority
                   />
@@ -123,7 +118,7 @@ export function AboutSection() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-secondary/30 rounded-lg">
-                  <Calendar className="w-5 h-5 text-neon-amber" />
+                  <Calendar className="w-5 h-5 text-primary" />
                   <div>
                     <p className="text-xs text-muted-foreground">Graduating</p>
                     <p className="text-sm font-medium text-foreground">May 2027</p>
