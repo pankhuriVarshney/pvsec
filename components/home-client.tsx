@@ -1,21 +1,21 @@
-"use client" // required for hooks
+"use client"
 
 import { useState, useEffect } from "react"
-import { MatrixRain } from "@/components/matrix-rain"
-import { Navbar } from "@/components/navbar"
-import { LoadingSplash } from "@/components/loading-splash"
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { ManifestoSection } from "@/components/manifesto-section"
-import { SkillsSection } from "@/components/skills-section"
-import { ExperienceSection } from "@/components/experience-section"
-import { ProjectsSection } from "@/components/projects-section"
-import BlogsSection from "@/components/blogs-section"
-import { CertificationsSection } from "@/components/certifications-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { MatrixRain } from "./matrix-rain"
+import { Navbar } from "./navbar"
+import { LoadingSplash } from "./loading-splash"
+import { HeroSection } from "./hero-section"
+import { AboutSection } from "./about-section"
+import { ManifestoSection } from "./manifesto-section"
+import { SkillsSection } from "./skills-section"
+import { ExperienceSection } from "./experience-section"
+import { ProjectsSection } from "./projects-section"
+import BlogsSection from "./blogs-section" // Server Component
+import { CertificationsSection } from "./certifications-section"
+import { ContactSection } from "./contact-section"
+import { Footer } from "./footer"
 
-export default function Home() {
+export default function HomeClientWrapper() {
   const [splashComplete, setSplashComplete] = useState(false)
 
   useEffect(() => {
@@ -45,7 +45,10 @@ export default function Home() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
+
+        {/* Server Component */}
         <BlogsSection />
+
         <CertificationsSection />
         <ContactSection />
         <Footer />
