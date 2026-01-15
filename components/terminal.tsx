@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
 import { TerminalIcon, Cpu, Wifi, Clock } from "lucide-react"
 
@@ -205,14 +204,15 @@ export function Terminal() {
     <div
       className="relative w-full max-w-2xl bg-card/90 backdrop-blur-sm border border-border rounded-lg overflow-hidden shadow-2xl shadow-primary/5"
       onClick={() => inputRef.current?.focus()}
+      suppressHydrationWarning
     >
       {/* Terminal header - enhanced */}
       <div className="flex items-center justify-between px-4 py-2.5 bg-secondary/80 border-b border-border">
         <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer" />
-            <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer" />
+            <div className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors cursor-pointer"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors cursor-pointer"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors cursor-pointer"></div>
           </div>
           <div className="flex items-center gap-2 ml-2">
             <TerminalIcon className="w-3.5 h-3.5 text-primary" />
@@ -281,6 +281,7 @@ export function Terminal() {
             onClick={() => handleCommand(cmd)}
             disabled={isTyping}
             className="px-2.5 py-1 text-xs text-muted-foreground hover:text-primary hover:bg-primary/10 border border-border/50 rounded transition-all disabled:opacity-50 font-mono"
+            type="button"
           >
             {cmd}
           </button>
